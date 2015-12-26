@@ -3,10 +3,20 @@
 
     
     <url>
-     <loc>None/</loc>
+     <loc>http://user-meta.com/</loc>
      <lastmod>2015-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
+        
+    <url>
+     <loc>http://user-meta.com/advanced/hooks/</loc>
+     <lastmod>2015-12-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
 </urlset>

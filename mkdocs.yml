@@ -1,1 +1,10 @@
-site_name: My Docs
+site_name: UserMetaPro
+site_url: http://user-meta.com
+site_description: WordPress plugin for managing users
+site_author: Khaled Hossain
+site_favicon: favicon.ico
+pages:
+- Home: index.md
+- Advanced:
+    - Action and Filter Hooks: advanced/hooks.md
+theme: readthedocs

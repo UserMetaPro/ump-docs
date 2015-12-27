@@ -19,15 +19,13 @@
   <link rel="stylesheet" href="./css/highlight.css">
 
   
-  <script>
-    // Current page data
-    var mkdocs_page_name = "None";
-  </script>
-  
   <script src="./js/jquery-2.1.1.min.js"></script>
   <script src="./js/modernizr-2.8.3.min.js"></script>
   <script type="text/javascript" src="./js/highlight.pack.js"></script>
-  <script src="./js/theme.js"></script> 
+  <script src="./js/theme.js"></script>
+  <script>var base_url = '.';</script>
+  <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
+
 
   
 </head>
@@ -51,17 +49,8 @@
         <ul class="current">
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href=".">Home</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#home">Home</a></li>
-                
-                    <li><a class="toctree-l4" href="#index">Index</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href=".">Home</a>
         
     </li>
 <li>
@@ -115,9 +104,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href=".">Docs</a> &raquo;</li>
     
-      
     
-    <li>Home</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -127,31 +114,22 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="home">Home</h1>
-<p>Documentation of <a href="http://user-meta.com">UserMetaPro</a> plugin (<a href="http://user-meta.com">http://user-meta.com</a>).</p>
-<p><a href="http://user-meta.com">UserMetaPro</a> is a WordPress plugin for users management.</p>
-<p>This is a partial documentation of the plugin.
-For full documentation visit <a href="http://user-meta.com/documentation/">http://user-meta.com/documentation/</a>.</p>
-<h2 id="index">Index</h2>
-<ul>
-<li>Action and Filter Hooks<ul>
-<li><a href="hooks/list/">List of action and filter hooks</a></li>
-<li><a href="hooks/examples/">Examples</a></li>
-</ul>
-</li>
-<li><a href="howto/">How To</a></li>
-</ul>
-              
+
+  <h1 id="search">Search Results</h1>
+
+  <form id="content_search" action="search.html">
+    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+    <input name="q" id="mkdocs-search-query" type="text" class="search_input search-query ui-autocomplete-input" placeholder="Search the Docs" autocomplete="off" autofocus>
+  </form>
+
+  <div id="mkdocs-search-results">
+    Sorry, page not found.
+  </div>
+
+
             </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="hooks/list/" class="btn btn-neutral float-right" title="List of action and filter hooks"/>Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-    </div>
   
 
   <hr/>
@@ -176,15 +154,8 @@ For full documentation visit <a href="http://user-meta.com/documentation/">http:
       
       
       
-        <span style="margin-left: 15px"><a href="hooks/list/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
     </span>
 </div>
 
 </body>
 </html>
-
-<!--
-MkDocs version : 0.14.0
-Build Date UTC : 2015-12-27 19:34:55.880175
--->

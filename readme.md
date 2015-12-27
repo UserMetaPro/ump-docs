@@ -1,4 +1,4 @@
-# [UserMetaPro](http://user-meta.com) Documentation
+# UserMetaPro documentation
 
 Documentation of [UserMetaPro](http://user-meta.com) plugin ([http://user-meta.com](http://user-meta.com)).
 

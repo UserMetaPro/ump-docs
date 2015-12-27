@@ -9,4 +9,4 @@ pages:
     - List of action and filter hooks: hooks/list.md
     - Examples: hooks/examples.md
 - How To: howto/index.md
-theme: bootstrap
+theme: readthedocs

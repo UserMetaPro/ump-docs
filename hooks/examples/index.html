@@ -78,10 +78,24 @@
                 <li class="toctree-l3"><a href="#user_meta_field_config-filter">user_meta_field_config (filter)</a></li>
                 
             
-                <li class="toctree-l3"><a href="#user_meta_pre_user_register-filter">user_meta_pre_user_register (filter)</a></li>
+                <li class="toctree-l3"><a href="#user-registration">User Registration</a></li>
+                
+                    <li><a class="toctree-l4" href="#user_meta_pre_user_register-filter">user_meta_pre_user_register (filter)</a></li>
+                
+                    <li><a class="toctree-l4" href="#user_meta_after_user_register-action">user_meta_after_user_register (action)</a></li>
                 
             
-                <li class="toctree-l3"><a href="#user_meta_after_user_register-action">user_meta_after_user_register (action)</a></li>
+                <li class="toctree-l3"><a href="#users-export">Users Export</a></li>
+                
+                    <li><a class="toctree-l4" href="#user_meta_user_export_filename-filter">user_meta_user_export_filename (filter)</a></li>
+                
+                    <li><a class="toctree-l4" href="#user_meta_user_export_csv_delimiter-filter">user_meta_user_export_csv_delimiter (filter)</a></li>
+                
+                    <li><a class="toctree-l4" href="#user_meta_user_export_csv_enclosure-filter">user_meta_user_export_csv_enclosure (filter)</a></li>
+                
+                    <li><a class="toctree-l4" href="#user_meta_user_export_label-filter">user_meta_user_export_label (filter)</a></li>
+                
+                    <li><a class="toctree-l4" href="#user_meta_user_export_fields-filter">user_meta_user_export_fields (filter)</a></li>
                 
             
             </ul>
@@ -195,12 +209,10 @@ function user_meta_field_config_function( $field, $fieldID, $formName ){
 </code></pre>
 
 <p><em>Note</em>: Use ascii code of comma where you want to appear it. <a href="http://www.asciitable.com/">asciitable</a></p>
-<h2 id="user_meta_pre_user_register-filter">user_meta_pre_user_register (filter)</h2>
-<p>This filter can be used to modify/add user data before user registration. Custom validation before user registration is also possible.</p>
-<p><strong>Since:</strong> 1.1.2<br />
-<strong>Parameter:</strong> <code>(array) $formData</code></p>
-<p><strong>Examples:</strong></p>
-<p>More validation before user register:</p>
+<h2 id="user-registration">User Registration</h2>
+<h3 id="user_meta_pre_user_register-filter">user_meta_pre_user_register (filter)</h3>
+<p><strong>Since:</strong> 1.1.2  </p>
+<p>More validation before user registration:</p>
 <pre><code>add_filter( 'user_meta_pre_user_register', 'user_meta_pre_user_register_function' );
 function user_meta_pre_user_register_function( $userData ){
     // Write your code for more validation before user register.
@@ -220,16 +232,59 @@ function user_meta_pre_user_register_function( $userData ){
 }
 </code></pre>
 
-<h2 id="user_meta_after_user_register-action">user_meta_after_user_register (action)</h2>
-<p>This action will run immediately after user registration.</p>
-<p><strong>Since:</strong> 1.1.2<br />
-<strong>Parameter:</strong> <code>(object) $response</code></p>
-<p><strong>Example:</strong></p>
+<h3 id="user_meta_after_user_register-action">user_meta_after_user_register (action)</h3>
+<p><strong>Since:</strong> 1.1.2</p>
+<p>Example:</p>
 <pre><code>add_action( 'user_meta_after_user_register', 'user_meta_after_user_register_function' );
 function user_meta_after_user_register_function( $response ){
     $userID = $response-&gt;ID;
     // Your code goes here
 }
+</code></pre>
+
+<h2 id="users-export">Users Export</h2>
+<h3 id="user_meta_user_export_filename-filter">user_meta_user_export_filename (filter)</h3>
+<p><strong>Since:</strong> 1.1.8</p>
+<p>Changing file name:</p>
+<pre><code>add_filter( 'user_meta_user_export_filename', function( $fileName ) {
+    return 'test.csv';
+});
+</code></pre>
+
+<h3 id="user_meta_user_export_csv_delimiter-filter">user_meta_user_export_csv_delimiter (filter)</h3>
+<p><strong>Since:</strong> 1.1.8</p>
+<p>Changing csv delimiter to <code>|</code>:</p>
+<pre><code>add_filter( 'user_meta_user_export_csv_delimiter', function() {
+    return '|';
+});
+</code></pre>
+
+<h3 id="user_meta_user_export_csv_enclosure-filter">user_meta_user_export_csv_enclosure (filter)</h3>
+<p><strong>Since:</strong> 1.1.8</p>
+<p>Changing csv delimiter to <code>!</code>:</p>
+<pre><code>add_filter( 'user_meta_user_export_csv_enclosure', function() {
+    return '!';
+});
+</code></pre>
+
+<h3 id="user_meta_user_export_label-filter">user_meta_user_export_label (filter)</h3>
+<p><strong>Since:</strong> 1.1.8</p>
+<p>Changing label of field name:</p>
+<pre><code>add_filter( 'user_meta_user_export_label', function ($fields) {
+    $fields['user_login'] = 'Renamed Username';
+
+    return $fields;
+});
+</code></pre>
+
+<h3 id="user_meta_user_export_fields-filter">user_meta_user_export_fields (filter)</h3>
+<p><strong>Since:</strong> 1.1.8</p>
+<p>Changing field value:</p>
+<pre><code>add_filter( 'user_meta_user_export_fields', function ( $userData, $user ) {
+    $userData['user_login'] = 'Renamed' . $user-&gt;ID;
+
+    return $userData;
+}, 10, 2);
 </code></pre>
               
             </div>

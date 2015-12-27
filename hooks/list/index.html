@@ -82,7 +82,9 @@
                 
                     <li><a class="toctree-l4" href="#redirection">Redirection</a></li>
                 
-                    <li><a class="toctree-l4" href="#messages">Messages</a></li>
+                    <li><a class="toctree-l4" href="#users-export">Users Export</a></li>
+                
+                    <li><a class="toctree-l4" href="#misc">Misc</a></li>
                 
             
             </ul>
@@ -144,33 +146,39 @@
             <div class="section">
               
                 <h1 id="action-and-filter-hooks">Action and Filter Hooks</h1>
-<p>List of all available action and filter hooks supported by <a href="http://user-meta.com">UserMetaPro</a>.</p>
-<h3 id="forms-and-fields">Forms and Fields</h3>
+<p>List of available action and filter hooks supported by <a href="http://user-meta.com">UserMetaPro</a>.</p>
+<h2 id="forms-and-fields">Forms and Fields</h2>
 <ol>
 <li>
 <p><strong>Action Hook: <em>user_meta_before_form</em></strong> (since 1.1.3)<br />
 Runs when generating form. Calling just before <code>&lt;form&gt;</code> tag.<br />
 <strong>Parameter:</strong> <code>(string) $formName</code></p>
+<blockquote></blockquote>
 </li>
 <li>
 <p><strong>Action Hook: <em>user_meta_after_form</em></strong> (since 1.1.3)<br />
 Runs when generating form. Calling just after <code>&lt;form&gt;</code> tag.<br />
 <strong>Parameter:</strong> <code>(string) $formName</code></p>
+<blockquote></blockquote>
 </li>
 <li>
-<p><strong>Filter Hook: <em>user_meta_form_config</em></strong> (since 1.1.3)<br />
+<p><strong>Filter Hook: <em>user_meta_form_config</em></strong> (since 1.1.3) <br />
 Can be modify forms data by calling this filter hook.<br />
 <strong>Parameter:</strong> <code>(array) $formData, (string) $formName</code></p>
+<blockquote></blockquote>
 </li>
 <li>
-<p><strong>Filter Hook: <em>user_meta_field_config</em></strong> (since 1.1.3)<br />
+<p><strong>Filter Hook:
+<em><a href="../examples/#user_meta_field_config-filter">user_meta_field_config</a></em></strong> (since 1.1.3)<br />
 Can be modify fields data by calling this filter hook.<br />
 <strong>Parameter:</strong> <code>(array) $formData, (int) $fieldID, (string) $formName</code></p>
+<blockquote></blockquote>
 </li>
 <li>
 <p><strong>Filter Hook: <em>user_meta_field_display</em></strong> (since 1.1.3)<br />
 Applied to field html before browser output.<br />
 <strong>Parameter:</strong> <code>(string) $html, (int) $fieldID, (string) $formName, (array) $formData</code></p>
+<blockquote></blockquote>
 </li>
 <li>
 <p><strong>Filter Hook: <em>user_meta_form_display</em></strong> (since 1.1.3)<br />
@@ -178,71 +186,123 @@ Applied to form html before browser output.<br />
 <strong>Parameter:</strong> <code>(string) $html, (string) $formName, (array) $formData</code></p>
 </li>
 </ol>
-<h3 id="user-registration">User Registration</h3>
+<h2 id="user-registration"><a href="../examples/#user-registration">User Registration</a></h2>
 <ol>
 <li>
 <p><strong>Fliter Hook: <em>user_meta_pre_user_register</em></strong> (since 1.1.2)<br />
 This filter can be used to modify user data before user registration.<br />
 <strong>Parameter:</strong> <code>(array) $userData</code></p>
+<blockquote></blockquote>
 </li>
 <li>
 <p><strong>Action Hook: <em>user_meta_after_user_register</em></strong> (since 1.1.2)<br />
-Runs when user registration is completed.<br />
+This action will run immediately after user registration.<br />
 <strong>Parameter:</strong> <code>(object) $response</code></p>
+<blockquote></blockquote>
 </li>
 </ol>
-<h3 id="user-profile-update">User Profile Update</h3>
+<h2 id="user-profile-update">User Profile Update</h2>
 <ol>
 <li>
 <p><strong>Fliter Hook: <em>user_meta_pre_user_update</em></strong> (since 1.1.3)<br />
 This filter can be used to modify user data before user profile update.<br />
 <strong>Parameter:</strong> <code>(array) $userData</code></p>
+<blockquote></blockquote>
 </li>
 <li>
 <p><strong>Action Hook: <em>user_meta_after_user_update</em></strong> (since 1.1.3)<br />
 Runs when user update their profile.<br />
 <strong>Parameter:</strong> <code>(object) $response</code></p>
+<blockquote></blockquote>
 </li>
 </ol>
-<h3 id="user-activationdeactivation">User Activation/Deactivation</h3>
+<h2 id="user-activationdeactivation">User Activation/Deactivation</h2>
 <ol>
 <li>
 <p><strong>Action Hook: <em>user_meta_user_activate</em></strong> (since 1.1.2)<br />
 Runs when user activated.<br />
 <strong>Parameter:</strong> <code>(int) $userID</code></p>
+<blockquote></blockquote>
 </li>
 <li>
 <p><strong>Action Hook: <em>user_meta_user_deactivate</em></strong> (since 1.1.2)<br />
 Runs when user deactivated.<br />
 <strong>Parameter:</strong> <code>(int) $userID</code></p>
+<blockquote></blockquote>
 </li>
 </ol>
-<h3 id="email-verification">Email Verification</h3>
+<h2 id="email-verification">Email Verification</h2>
 <ol>
 <li><strong>Action Hook: <em>user_meta_email_verified</em></strong> (since 1.1.2)<br />
 Runs when user verified their email.<br />
 <strong>Parameter:</strong> <code>(int) $userID</code></li>
 </ol>
-<h3 id="redirection">Redirection</h3>
+<h2 id="redirection">Redirection</h2>
 <ol>
 <li>
 <p><strong>Filter Hook: <em>login_redirect</em></strong> (since 1.1.2)<br />
-Can be used to change login redirection url.</p>
+Can be used to change login redirection url.<br />
+<strong>Parameter:</strong> <code>(string) $url, (string) $request_url, (WP_User | WP_Error) $user</code>  </p>
+<blockquote></blockquote>
 </li>
 <li>
 <p><strong>Filter Hook: <em>logout_redirect</em></strong> (since 1.1.2)<br />
-Can be used to change login redirection url.</p>
+Can be used to change login redirection url.<br />
+<strong>Parameter:</strong> <code>(string) $url, (string) $request_url, (WP_User) $user</code></p>
+<blockquote></blockquote>
 </li>
 <li>
 <p><strong>Filter Hook: <em>registration_redirect</em></strong> (since 1.1.2)<br />
-Can be used to change login redirection url.</p>
+Can be used to change login redirection url.<br />
+<strong>Parameter:</strong> <code>(string) $url, (int) $userID</code></p>
 </li>
 </ol>
-<h3 id="messages">Messages</h3>
+<p><strong>Note</strong>: By default, all redirection filters is disabled. To enable them use <code>user_meta_wp_hook</code> filter.</p>
+<h2 id="users-export"><a href="../examples/#users-export">Users Export</a></h2>
 <ol>
-<li><strong>Filter Hook: <em>user_meta_msg</em></strong> (since 1.1.3)<br />
+<li>
+<p><strong>Filter Hook: <em>user_meta_user_export_filename</em></strong> (since 1.1.8)<br />
+Change file name of exported csv file.<br />
+<strong>Parameter:</strong> <code>(string) $fileName</code></p>
+<blockquote></blockquote>
+</li>
+<li>
+<p><strong>Filter Hook: <em>user_meta_user_export_csv_delimiter</em></strong> (since 1.1.8)<br />
+Change default delimiter <code>,</code><br />
+<strong>Parameter:</strong> <code>(string) $delimiter</code></p>
+<blockquote></blockquote>
+</li>
+<li>
+<p><strong>Filter Hook: <em>user_meta_user_export_csv_enclosure</em></strong> (since 1.1.8)<br />
+Change default enclosure <code>"</code><br />
+<strong>Parameter:</strong> <code>(string) $enclosure</code></p>
+<blockquote></blockquote>
+</li>
+<li>
+<p><strong>Filter Hook: <em>user_meta_user_export_label</em></strong> (since 1.1.8)<br />
+Change label of csv file (first row).<br />
+<strong>Parameter:</strong> <code>(array) fields</code></p>
+<blockquote></blockquote>
+</li>
+<li>
+<p><strong>Filter Hook: <em>user_meta_user_export_fields</em></strong> (since 1.1.8)<br />
+Change field value of exported file.<br />
+<strong>Parameter:</strong> <code>(array) $userData, (WP_User) $user</code></p>
+</li>
+</ol>
+<h2 id="misc">Misc</h2>
+<ol>
+<li>
+<p><strong>Filter Hook: <em>user_meta_msg</em></strong> (since 1.1.3)<br />
 Message text can be changed by this filter.<br />
-<strong>Parameter:</strong> <code>(string) $message, (string) $key</code></li>
+<strong>Parameter:</strong> <code>(string) $message, (string) $key</code></p>
+<blockquote></blockquote>
+</li>
+<li>
+<p><strong>Filter Hook: user_meta_wp_hook</strong> (since 1.1.6)<br />
+Enable or disable conflicted hooks.<br />
+<strong>Parameter:</strong> <code>(boolean) $enable, (string) $hookName, (array) $args</code></p>
+</li>
 </ol>
               
             </div>

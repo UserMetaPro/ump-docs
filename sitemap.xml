@@ -12,11 +12,25 @@
     
         
     <url>
-     <loc>http://user-meta.com/advanced/hooks/</loc>
+     <loc>http://user-meta.com/hooks/list/</loc>
      <lastmod>2015-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>http://user-meta.com/hooks/examples/</loc>
+     <lastmod>2015-12-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>http://user-meta.com/howto/</loc>
+     <lastmod>2015-12-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
     
 
 </urlset>

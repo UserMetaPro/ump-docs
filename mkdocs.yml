@@ -5,6 +5,8 @@ site_author: Khaled Hossain
 site_favicon: favicon.ico
 pages:
 - Home: index.md
-- Advanced:
-    - Action and Filter Hooks: advanced/hooks.md
-theme: readthedocs
+- Action and Filter Hooks:
+    - List of action and filter hooks: hooks/list.md
+    - Examples: hooks/examples.md
+- How To: howto/index.md
+theme: bootstrap

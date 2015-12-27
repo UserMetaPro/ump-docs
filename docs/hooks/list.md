@@ -1,6 +1,6 @@
 # Action and Filter Hooks
 
-List of all available action and filter hooks supported by UserMetaPro.
+List of all available action and filter hooks supported by [UserMetaPro](http://user-meta.com).
 
 ### Forms and Fields
 
@@ -30,7 +30,7 @@ Applied to form html before browser output.
 
 ### User Registration
 
-1. Fliter Hook: _user_meta_pre_user_register_** (since 1.1.2)  
+1. **Fliter Hook: _user_meta_pre_user_register_** (since 1.1.2)  
 This filter can be used to modify user data before user registration.  
  **Parameter:** `(array) $userData`
 

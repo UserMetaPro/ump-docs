@@ -1,4 +1,4 @@
-# Home
+# [UserMetaPro](http://user-meta.com) Documentation
 
 Documentation of [UserMetaPro](http://user-meta.com) plugin ([http://user-meta.com](http://user-meta.com)).
 
@@ -6,10 +6,3 @@ Documentation of [UserMetaPro](http://user-meta.com) plugin ([http://user-meta.c
 
 This is a partial documentation of the plugin.
 For full documentation visit [http://user-meta.com/documentation/](http://user-meta.com/documentation/).
-
-## Index
-
-* Action and Filter Hooks
-    * [List of action and filter hooks](hooks/list.md)
-    * [Examples](hooks/examples.md)
-* [How To](howto/index.md)

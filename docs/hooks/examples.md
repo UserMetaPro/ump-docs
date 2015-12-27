@@ -69,16 +69,13 @@ function user_meta_field_config_function( $field, $fieldID, $formName ){
 
 _Note_: Use ascii code of comma where you want to appear it. [asciitable](http://www.asciitable.com/)
 
-## user_meta_pre_user_register (filter)
+## User Registration
 
-This filter can be used to modify/add user data before user registration. Custom validation before user registration is also possible.
+### user_meta_pre_user_register (filter)
 
 **Since:** 1.1.2  
-**Parameter:** `(array) $formData`
 
-**Examples:**
-
-More validation before user register:
+More validation before user registration:
 
 ```
 add_filter( 'user_meta_pre_user_register', 'user_meta_pre_user_register_function' );
@@ -102,14 +99,11 @@ function user_meta_pre_user_register_function( $userData ){
 }
 ```
 
-## user_meta_after_user_register (action)
+### user_meta_after_user_register (action)
 
-This action will run immediately after user registration.
+**Since:** 1.1.2
 
-**Since:** 1.1.2  
-**Parameter:** `(object) $response`
-
-**Example:**
+Example:
 
 ```
 add_action( 'user_meta_after_user_register', 'user_meta_after_user_register_function' );
@@ -117,4 +111,70 @@ function user_meta_after_user_register_function( $response ){
     $userID = $response->ID;
     // Your code goes here
 }
+```
+
+## Users Export
+
+### user_meta_user_export_filename (filter)
+
+**Since:** 1.1.8
+
+Changing file name:
+
+```
+add_filter( 'user_meta_user_export_filename', function( $fileName ) {
+    return 'test.csv';
+});
+```
+
+### user_meta_user_export_csv_delimiter (filter)
+
+**Since:** 1.1.8
+
+Changing csv delimiter to `|`:
+
+```
+add_filter( 'user_meta_user_export_csv_delimiter', function() {
+    return '|';
+});
+```
+
+### user_meta_user_export_csv_enclosure (filter)
+
+**Since:** 1.1.8
+
+Changing csv delimiter to `!`:
+
+```
+add_filter( 'user_meta_user_export_csv_enclosure', function() {
+    return '!';
+});
+```
+
+### user_meta_user_export_label (filter)
+
+**Since:** 1.1.8
+
+Changing label of field name:
+
+```
+add_filter( 'user_meta_user_export_label', function ($fields) {
+    $fields['user_login'] = 'Renamed Username';
+
+    return $fields;
+});
+```
+
+### user_meta_user_export_fields (filter)
+
+**Since:** 1.1.8
+
+Changing field value:
+
+```
+add_filter( 'user_meta_user_export_fields', function ( $userData, $user ) {
+    $userData['user_login'] = 'Renamed' . $user->ID;
+
+    return $userData;
+}, 10, 2);
 ```

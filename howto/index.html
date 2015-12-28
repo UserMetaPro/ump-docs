@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>How To - UserMetaPro</title>
+  <title>How To ? - UserMetaPro</title>
   
 
   <link rel="shortcut icon" href="../favicon.ico">
@@ -21,7 +21,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "How To";
+    var mkdocs_page_name = "How To ?";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -81,7 +81,7 @@
           
             <li>
     <li class="toctree-l1 current">
-        <a class="current" href="./">How To</a>
+        <a class="current" href="./">How To ?</a>
         
             <ul>
             
@@ -106,6 +106,8 @@
                     <li><a class="toctree-l4" href="#extend-date-range">Extend date range</a></li>
                 
                     <li><a class="toctree-l4" href="#use-non-ajax-file-upload-field">Use non-ajax file upload field</a></li>
+                
+                    <li><a class="toctree-l4" href="#export-file-url-with-user-export">Export file url with user export</a></li>
                 
             
             </ul>
@@ -135,7 +137,7 @@
     
       
     
-    <li>How To</li>
+    <li>How To ?</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -255,6 +257,26 @@ To choose non-ajax file upload, follow those steps:</p>
 <p>Go to <code>User Meta &gt;&gt; Forms</code>, expand your form and check <code>Do not use AJAX submit</code> checkbox and save your change.</p>
 </li>
 </ol>
+<h2 id="export-file-url-with-user-export">Export file url with user export</h2>
+<p>By default, UMP export relative path of file for exporting users into a csv file. To export file url, put following codes to <code>functions.php</code>.</p>
+<pre><code>add_filter('user_meta_user_export_fields', function ($userData, $user) {
+    global $userMeta;
+
+    if (!empty($userData['user_avatar'])) {
+        $file = $userMeta-&gt;determinFileDir($userData['user_avatar']);
+
+        if ($file) {
+            $userData['user_avatar'] = $file['url'];
+            // For full path:
+            // $userData['user_avatar'] = $file['path'];
+        }
+    }
+
+    return $userData;
+}, 10, 2);
+</code></pre>
+
+<p><strong>Note:</strong> Required version 1.1.8 or above.</p>
               
             </div>
           </div>

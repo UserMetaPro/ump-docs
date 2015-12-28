@@ -113,7 +113,7 @@ function user_meta_after_user_register_function( $response ){
 }
 ```
 
-## Users Export
+## User Export
 
 ### user_meta_user_export_filename (filter)
 

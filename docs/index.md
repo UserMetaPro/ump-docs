@@ -12,4 +12,4 @@ For full documentation visit [http://user-meta.com/documentation/](http://user-m
 * Action and Filter Hooks
     * [List of action and filter hooks](hooks/list.md)
     * [Examples](hooks/examples.md)
-* [How To](howto/index.md)
+* [How To ?](howto/index.md)

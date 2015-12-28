@@ -94,7 +94,7 @@ Can be used to change login redirection url.
 
  __Note__: By default, all redirection filters is disabled. To enable them use `user_meta_wp_hook` filter.
 
-## [Users Export](../hooks/examples.md#users-export)
+## [User Export](../hooks/examples.md#user-export)
 
 1. **Filter Hook: _user_meta_user_export_filename_** (since 1.1.8)  
 Change file name of exported csv file.  

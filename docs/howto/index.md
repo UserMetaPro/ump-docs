@@ -132,3 +132,27 @@ To choose non-ajax file upload, follow those steps:
 1. Go to `User Meta >> Shared Fields`, expand your file upload field (or avatar field) and check `Disable AJAX upload` checkbox, save your change.
 
 2. Go to `User Meta >> Forms`, expand your form and check `Do not use AJAX submit` checkbox and save your change.
+
+## Export file url with user export
+
+By default, UMP export relative path of file for exporting users into a csv file. To export file url, put following codes to `functions.php`.
+
+```
+add_filter('user_meta_user_export_fields', function ($userData, $user) {
+    global $userMeta;
+
+    if (!empty($userData['user_avatar'])) {
+        $file = $userMeta->determinFileDir($userData['user_avatar']);
+
+        if ($file) {
+            $userData['user_avatar'] = $file['url'];
+            // For full path:
+            // $userData['user_avatar'] = $file['path'];
+        }
+    }
+
+    return $userData;
+}, 10, 2);
+```
+
+**Note:** Required version 1.1.8 or above.

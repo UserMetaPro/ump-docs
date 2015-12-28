@@ -146,7 +146,7 @@ add_filter('user_meta_user_export_fields', function ($userData, $user) {
 
         if ($file) {
             $userData['user_avatar'] = $file['url'];
-            // For full path:
+            // For full path, use:
             // $userData['user_avatar'] = $file['path'];
         }
     }

@@ -1,3 +1,5 @@
+Examples of action or filter hooks
+
 ## user_meta_field_config (filter)
 
 This filter hook can be use to modify fields data.
@@ -117,7 +119,7 @@ function user_meta_after_user_register_function( $response ){
 
 ### user_meta_user_export_filename (filter)
 
-**Since:** 1.1.8
+**Since:** 1.2
 
 Changing file name:
 
@@ -129,7 +131,7 @@ add_filter( 'user_meta_user_export_filename', function( $fileName ) {
 
 ### user_meta_user_export_csv_delimiter (filter)
 
-**Since:** 1.1.8
+**Since:** 1.2
 
 Changing csv delimiter to `|`:
 
@@ -141,7 +143,7 @@ add_filter( 'user_meta_user_export_csv_delimiter', function() {
 
 ### user_meta_user_export_csv_enclosure (filter)
 
-**Since:** 1.1.8
+**Since:** 1.2
 
 Changing csv delimiter to `!`:
 
@@ -153,7 +155,7 @@ add_filter( 'user_meta_user_export_csv_enclosure', function() {
 
 ### user_meta_user_export_label (filter)
 
-**Since:** 1.1.8
+**Since:** 1.2
 
 Changing label of field name:
 
@@ -167,7 +169,7 @@ add_filter( 'user_meta_user_export_label', function ($fields) {
 
 ### user_meta_user_export_fields (filter)
 
-**Since:** 1.1.8
+**Since:** 1.2
 
 Changing field value:
 

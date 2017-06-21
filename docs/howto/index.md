@@ -155,4 +155,4 @@ add_filter('user_meta_user_export_fields', function ($userData, $user) {
 }, 10, 2);
 ```
 
-**Note:** Required version 1.1.8 or above.
+**Note:** Required version 1.2 or above.
